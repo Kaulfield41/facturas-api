@@ -1,7 +1,7 @@
 [project]
 name = "facturas-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "Extracción estructurada de datos de facturas con LLM y validación Pydantic"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
