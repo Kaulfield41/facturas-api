@@ -1,7 +1,7 @@
 # Extracción estructurada de facturas
 
-Extrae datos de facturas en texto libre y devuelve seis campos tipados y validados:
-emisor, NIF del emisor, número de factura, fecha de emisión, base imponible y total.
+Extrae datos de facturas en texto libre y devuelve 7 campos tipados y validados:
+emisor, NIF del emisor, número de factura, fecha de emisión, base imponible, cuota de iva y total.
 
 Usa la API de Claude para la extracción y Pydantic para definir el formato de salida
 y validar la respuesta. El esquema del prompt se genera desde el propio modelo Pydantic,
