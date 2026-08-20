@@ -1,0 +1,22 @@
+# Extracción estructurada de facturas
+
+Extrae datos de facturas en texto libre y devuelve seis campos tipados y validados:
+emisor, NIF del emisor, número de factura, fecha de emisión, base imponible y total.
+
+Usa la API de Claude para la extracción y Pydantic para definir el formato de salida
+y validar la respuesta. El esquema del prompt se genera desde el propio modelo Pydantic,
+de forma que añadir un campo solo requiere modificar `schemas.py`.
+
+Probado con facturas de Iberdrola, Jazztel y tickets de Alcampo.
+
+## Limitaciones conocidas
+
+- **El modelo calcula valores que no están en el documento.** Con un ticket con tres
+  tipos de IVA, devolvió como base imponible la suma de las tres bases, un número que
+  no aparece escrito en el ticket.
+- **Prohibirlo en el prompt no lo resuelve.** Al añadir "extrae únicamente valores
+  literales", el resultado empeoró: devolvió un número que no era ni la suma ni ninguna
+  de las bases, y truncó el número de factura.
+- **El esquema asume un único tipo de IVA.** Documentos con varios tipos no encajan.
+- **La extracción de PDF no es limpia.** El símbolo del euro aparece como `¤` y las
+  tablas llegan con las columnas desalineadas.

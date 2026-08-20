@@ -6,7 +6,7 @@ from schemas import Factura
 load_dotenv()
 client = Anthropic()
 
-texto = open("factura_ejemplo.txt").read()
+texto = open("factura_ejemplo_3.txt").read()
 schema = json.dumps(Factura.model_json_schema(), ensure_ascii=False)
 
 prompt = f"""Extrae los datos de esta factura y devuelve SOLO un objeto JSON
@@ -15,6 +15,7 @@ que cumpla este schema, sin explicaciones ni ```json.
 El emisor es quien cobra, no quien paga.
 Las fechas en formato ISO (AAAA-MM-DD).
 Los importes como números, con punto decimal.
+
 
 SCHEMA:
 {schema}
