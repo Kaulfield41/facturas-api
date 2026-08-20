@@ -43,3 +43,13 @@ if crudo.startswith("```"):
 factura = Factura.model_validate_json(crudo)
 print("--- VALIDADO ---")
 print(factura)
+
+suma = factura.base_imponible + factura.cuota_iva
+
+if abs(suma - factura.total) > 0.01:
+    raise ValueError(
+        f"Los importes no cuadran: {factura.base_imponible} + "
+        f"{factura.cuota_iva} = {suma}, pero el total dice {factura.total}"
+    )
+
+print("--- IMPORTES CUADRAN ---")

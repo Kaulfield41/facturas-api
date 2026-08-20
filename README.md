@@ -20,3 +20,10 @@ Probado con facturas de Iberdrola, Jazztel y tickets de Alcampo.
 - **El esquema asume un único tipo de IVA.** Documentos con varios tipos no encajan.
 - **La extracción de PDF no es limpia.** El símbolo del euro aparece como `¤` y las
   tablas llegan con las columnas desalineadas.
+- **La comprobación de importes verifica coherencia, no fidelidad.** Se valida que
+  base + cuota = total, lo que detecta valores corruptos o mal leídos. No detecta
+  una reconstrucción coherente: con el ticket de Alcampo, el modelo sumó las tres
+  bases y las tres cuotas, y la comprobación pasó con datos que no están escritos
+  en el documento.
+- **Documentos con varios tipos de IVA deberían rechazarse, no procesarse.** Aún
+  no está implementado.

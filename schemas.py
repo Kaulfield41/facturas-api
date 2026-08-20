@@ -7,4 +7,5 @@ class Factura(BaseModel):
     numero_factura: str
     fecha_emision: date
     base_imponible: float
+    cuota_iva: float
     total: float
