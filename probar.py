@@ -1,14 +1,6 @@
-import json
-from schemas import Factura
+from pathlib import Path
 
-resultado = Factura.model_json_schema()
+carpeta = Path("facturas")
+archivos = list(carpeta.glob("*.txt"))
 
-print("--- DICCIONARIO ---")
-print(type(resultado))
-print(resultado)
-
-texto = json.dumps(resultado, ensure_ascii=False)
-
-print("--- DESPUÉS DE DUMPS ---")
-print(type(texto))
-print(texto)
+print(archivos)
