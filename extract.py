@@ -1,4 +1,5 @@
 import json
+import csv
 from pathlib import Path
 from anthropic import Anthropic
 from dotenv import load_dotenv
@@ -52,3 +53,13 @@ FACTURA:
         print(f"FALLO  {ruta.name}: {error}")
 
 print(f"\n{len(resultados)} correctas, {len(fallos)} fallidas")
+
+with open("resultados.csv", "w", newline="") as f:
+    escritor = csv.writer(f)
+    escritor.writerow(["emisor", "nif_emisor", "numero_factura",
+                        "fecha_emision", "base_imponible", "cuota_iva", "total"])
+    for factura in resultados:
+        escritor.writerow([factura.emisor, factura.nif_emisor,
+                            factura.numero_factura, factura.fecha_emision,
+                            factura.base_imponible, factura.cuota_iva,
+                            factura.total])
