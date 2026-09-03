@@ -28,7 +28,7 @@ Probado con facturas de Iberdrola, Jazztel y tickets de Alcampo.
 - **Documentos con varios tipos de IVA deberían rechazarse, no procesarse.** Aún
   no está implementado.
 
-  ## Coste
+## Coste
 
 Aproximadamente 0,003 $ por factura con Claude Sonnet, según el consumo
 registrado durante el desarrollo (0,06 $ en unas veinte llamadas de prueba).
