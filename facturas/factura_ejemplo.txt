@@ -166,13 +166,13 @@ Precios de peajes de acceso: B.O.E. del 22/12/2025
 Fecha final del contrato: 19/03/2036
 Permanencia: No
 Empresa distribuidora: Número de contrato de acceso: i-DE, Redes Eléctricas Inteligentes, S.A.U.
-3232844
+12344566
 Identificación punto de suministro (CUPS): ES 0021 0023 0232 8866 YE
 Descripción del suministro: CHALET(VIVIENDA UNIFAMILIAR)
 Forma de pago: DOMICILIACION BANCARIA
 IBAN: ES43 7890 2222 9091 2040 ****
 BIC: BASKES2BXXX
-Código de mandato: 282118182000
+Código de mandato: 1234567789
 **** (Ocultos para su seguridad)
 Las lecturas desagregadas según la tarifa de acceso, tomadas el 25/05/2026 son: punta: 7.874 kWh; llano: 7.340 kWh; valle 6.365 kWh, siendo estas
 lecturas reales. Sus consumos desagregados han sido punta: 69 kWh; llano: 65 kWh; valle 124 kWh.
